@@ -101,14 +101,14 @@ def time_stats(df):
     start_time = time.time()
 
     # TO DO: display the most common month
-    print('The most common month traveled is {}'.format(MONTHS.get(str(df[('Start Month')].mode()).split()[1])))
+    print('The most common month traveled is {}.\nThe most common day traveled is {}.\nThe most common hour that trips begin is {}{}.'.format(MONTHS.get(str(df[('Start Month')].mode()).split()[1]),DAYS.get(str(df[('Start Day')].mode()+1).split()[1]),str(df[('Start Hour')].mode()).split()[1],':00'))
     # TO DO: display the most common day of week
     # adjust the day number to take into account python's day numbering starts with Sunday = 0.
 
-    print('The most common day traveled is {}'.format(DAYS.get(str(df[('Start Day')].mode()+1).split()[1])))
+
 
     # TO DO: display the most common start hour
-    print('The most common hour that trips begin is {}{}'.format(str(df[('Start Hour')].mode()).split()[1],':00'))
+    
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
     del df['StartTime']
