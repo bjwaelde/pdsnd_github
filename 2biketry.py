@@ -189,7 +189,7 @@ def user_stats(df, city):
             print('-'*40)
 
 def view_raw(df):
-    """checks to see if the user wants to view the raw data, and if so, optimizes for viewing. Allows user to see 10 rows at a time. Gives the user multiple chances to correct incorrect inputs"""
+    """checks to see if the user wants to view the raw data, and if so, optimizes for viewing. Allows user to see 5 rows at a time. Gives the user multiple chances to correct incorrect inputs"""
 
 
     i = 1
