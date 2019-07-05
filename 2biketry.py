@@ -98,18 +98,18 @@ def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
-    start_time = time.time()
+
 
     # TO DO: display the most common month
-    print('The most common month traveled is {}'.format(MONTHS.get(str(df[('Start Month')].mode()).split()[1])))
+    print('The most common month traveled is {}.\nThe most common day traveled is {}.\nThe most common hour that trips begin is {}{}.'.format(MONTHS.get(str(df[('Start Month')].mode()).split()[1]),DAYS.get(str(df[('Start Day')].mode()+1).split()[1]),str(df[('Start Hour')].mode()).split()[1],':00'))
     # TO DO: display the most common day of week
     # adjust the day number to take into account python's day numbering starts with Sunday = 0.
 
-    print('The most common day traveled is {}'.format(DAYS.get(str(df[('Start Day')].mode()+1).split()[1])))
+
 
     # TO DO: display the most common start hour
-    print('The most common hour that trips begin is {}{}'.format(str(df[('Start Hour')].mode()).split()[1],':00'))
-    print("\nThis took %s seconds." % (time.time() - start_time))
+
+
     print('-'*40)
     del df['StartTime']
     del df['Start Hour']
@@ -119,7 +119,7 @@ def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
-    start_time = time.time()
+
 
     # TO DO: display most commonly used start station
     print('The most common starting station is {}'.format(str(df[('Start Station')].mode()).split(" ",1)[1].strip().replace("dtype: object","")))
@@ -133,28 +133,28 @@ def station_stats(df):
     df1 = df.groupby(['Start Station', 'End Station']).size().to_frame(name = 'Trips').reset_index()
     df1 = df1.sort_values(by ='Trips', ascending=False)
     print(df1.head(1).to_string(index=False))
-    print("\nThis took %s seconds." % (time.time() - start_time))
+
     print('-'*40)
 
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
 
     print('\nCalculating Trip Duration...\n')
-    start_time = time.time()
+
     ##print(df.columns)
     # TO DO: display total travel time
     print('Total travel time: {} hours and {} minutes'.format(int(df['Trip Duration'].sum()//3600), int((df['Trip Duration'].sum() % 3600)//60)))
     # TO DO: display mean travel time
     print('Mean travel time was: {} minutes and {} seconds'.format(int(df['Trip Duration'].mean()//60), int((df['Trip Duration'].sum() % 60))))
 
-    print('\nThis took %s seconds.' % (time.time() - start_time))
+
     print('-'*40)
 
-def user_stats(df, city):
+def user_stats(df):
     """Displays statistics on bikeshare users."""
 
     print('\nCalculating User Stats...\n')
-    start_time = time.time()
+
     print('Bikeshare Users by User Type:\n')
     # TO DO: Display counts of user types
     print(df['User Type'].value_counts().to_frame())
@@ -185,7 +185,7 @@ def user_stats(df, city):
             print('Gender and birth year are not available for bikeshare users in the chosen city')
             break
         finally:
-            print("\nThis took %s seconds." % (time.time() - start_time))
+
             print('-'*40)
 
 def view_raw(df):
@@ -243,7 +243,7 @@ def main():
             time_stats(df)
             station_stats(df)
             trip_duration_stats(df)
-            user_stats(df, city)
+            user_stats(df)
             view_raw(df)
             restart = input('Do you want to start again? Y to restart: ') or 'n'
             ## At this point, it's ok for the program just to exit if it does not get yes.  or is used to avoid a crash if the entry is null.
