@@ -14,5 +14,5 @@ Source data is in .csv files: washingon.csv, new_york_city.csv, and chicago.csv.
 
 ### Credits
 
-The template for the .py file was created by Udacity and already contained the basic structure and most of the docstrings.  Stack Overflow was consulted for various specifications of interest to the programmer and not covered in the Udacity course. See the code comments for more information.
+The template for the .py file was created by Udacity and already contained the basic structure and most of the docstrings.  [Stack Overflow](https://stackoverflow.com) was consulted for various specifications of interest to the programmer and not covered in the Udacity course. See the code comments for more information.
 Advice to add .gitignore to remote repository and guidance on using the style guide for commitment messages was provided by the first Udacity reviewer.
