@@ -6,7 +6,7 @@ Bikeshare for Udacity - Student Submission
 
 ### Description
 
-This was created for a udacity programming course.  It is an interactive Python program that runs in the command prompt that allows users to filter and browse ride data from a bikesharing program.  Users can select the city and add optional filters by month of year and day of week. The program returns descriptive statistics and allows the user to browse the raw data.
+This was created for a Udacity programming course.  It is an interactive Python program that runs in the command prompt that allows users to filter and browse ride data from a bikesharing program.  Users can select the city and add optional filters by month of year and day of week. The program returns descriptive statistics and allows the user to browse the raw data.
 
 ### Files used
 The 2biketry.py program contains the code.
