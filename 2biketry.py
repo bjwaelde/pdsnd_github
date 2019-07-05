@@ -150,7 +150,7 @@ def trip_duration_stats(df):
     print('\nThis took %s seconds.' % (time.time() - start_time))
     print('-'*40)
 
-def user_stats(df, city):
+def user_stats(df):
     """Displays statistics on bikeshare users."""
 
     print('\nCalculating User Stats...\n')
@@ -243,7 +243,7 @@ def main():
             time_stats(df)
             station_stats(df)
             trip_duration_stats(df)
-            user_stats(df, city)
+            user_stats(df)
             view_raw(df)
             restart = input('Do you want to start again? Y to restart: ') or 'n'
             ## At this point, it's ok for the program just to exit if it does not get yes.  or is used to avoid a crash if the entry is null.
